@@ -1,6 +1,53 @@
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
+
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+// mixin para pegar svg e colorir, tem que passar um url, uma cor, e o size se nao for passado por padrao é 24px
+@mixin icon-setup($path, $color, $width: 24px, $height: 24px) {
+  display: inline-block;
+  width: $width;
+  height: $height;
+
+  // A cor que vai preencher o "molde"
+  background-color: $color;
+
+  // O molde (SVG)
+  mask-image: url($path);
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+
+  // Compatibilidade com navegadores antigos (Safari/Chrome)
+  -webkit-mask-image: url($path);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+}
+
+// mixin dos estilos de fontes
+
+@mixin h1-style {
+  font-family: Inter, 'sans serif';
+  font-size: 26px;
+  line-height: 130%;
+  font-weight: 900;
+  color: #fff;
+
+  &>span {
+    // apenas o span dentro da classe que foi chamado vai ser selecionado
+    font-weight: 400;
+    color: #05C2DF;
+  }
+}
+
+@mixin normaltext-style {
+  font-family: Inter, 'sans serif';
+  color: #929292;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
 }
