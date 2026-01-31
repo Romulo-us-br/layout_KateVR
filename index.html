@@ -1,19 +1,67 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>KatVR</title>
-    <link
-      rel="stylesheet"
-      href="src/styles/main.scss"
-    />
-    <script src="src/scripts/main.js"></script>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  </head>
-  <body>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KatVR</title>
+  <link rel="stylesheet" href="src/styles/main.scss" />
+  <script src="src/scripts/main.js"></script>
+  <link rel="shortcut icon" href="src/images/caetano-icon.ico" type="image/x-icon">
+</head>
+
+<body class="page">
+  <header class="header">
+    <div class="header__menu">
+      <div class="header__menu-logo">
+        <a href="#" class="link">
+          <img src="src/images/icons/icon-logo.png" alt="KatVR logotipo" class="logos-icons header__menu-logo-img">
+        </a>
+      </div>
+      <div class="header__menu-right">
+        <a href="#menu" class="link">
+          <span class="header__menu-right-svg logos-icons"></span>
+        </a>
+      </div>
+    </div>
+    <nav class="menu" id="menu">
+      <div class="menu-top">
+        <div class="menu-top-logo">
+          <a href="#" class="link">
+            <img src="src/images/icons/icon-logo.png" alt="KatVR logotipo" class="logos-icons menu-top-logo-img">
+          </a>
+        </div>
+        <div class="menu-top-right">
+          <a href="#" class="link">
+            <span class="menu-top-right-svg logos-icons"></span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <main class="main">
+    <section class="apresentation">
+      <div class="apresentation-background">
+        <img src="src/images/background/background-topo.png" alt="apresentação do produto"
+          class="apresentation-background-img">
+      </div>
+      <div class="apresentation-content">
+        <h1 class="apresentation-content-title">
+          THE NEW START OF
+          <span>VR LOCOMOTION</span>
+        </h1>
+        <p class="apresentation-content-desc">Discover the most comprehensive VR Locomotion system, and unlock infinite
+          motion in any games on any platforms!</p>
+        <p class="apresentation-content-value"> 1200$</p>
+        <span class="apresentation-content-play-background"></span>
+        <a href="#" class="link-button">
+          <button class="apresentation-content-button">Buy now</button>
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+
 </html>

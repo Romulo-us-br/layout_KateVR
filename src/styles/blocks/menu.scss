@@ -1,0 +1,43 @@
+.menu {
+  @include page-grid;
+  @include background-color;
+
+  pointer-events: none;
+ 
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform: translate(100%);
+
+  grid-column: 1/-1;
+
+  height: 100vh;
+  padding-block: 30px;
+
+  opacity: 0;
+  background-color: #fff;
+
+  transition: all 0.3 ease;
+
+  &:target {
+    pointer-events: all;
+    transform: translate(0);
+    opacity: 1;
+  }
+
+
+  &-top {
+    display: flex;
+    grid-column: 1/-1;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-right {
+      &-svg {
+        @include setup-svg('/src/images/svg/close-icon.svg', #fff);
+      }
+    }
+  }
+}
