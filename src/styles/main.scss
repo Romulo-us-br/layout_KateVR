@@ -2,28 +2,28 @@
 @import 'fonts';
 @import 'typography';
 @import 'blocks/apresentation';
-@import 'blocks/aboutproduct';
+@import 'blocks/about';
 @import 'blocks/contact';
 @import 'blocks/footer';
 @import 'blocks/header';
 @import 'blocks/morethangame';
 @import 'blocks/nav';
-@import 'blocks/nicetomeet';
 @import 'blocks/techspech';
 @import 'blocks/whykat';
 @import 'blocks/menu';
 
 
-html {
+
+.page {
   scroll-behavior: smooth;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  @include background-color;
+
 }
 
-.page {
-  @include background-color;
-}
 
 .header {
   @include page-grid;
@@ -64,5 +64,17 @@ html {
 
   &:hover {
     transform: scale(1.1);
+  }
+}
+
+.ontablet-hide {
+  @include device('tablet', min) {
+    display: none;
+  }
+}
+
+.onmobile-hide {
+  @include device('tablet', max) {
+    display: none;
   }
 }

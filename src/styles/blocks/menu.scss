@@ -1,9 +1,9 @@
 .menu {
-  @include page-grid;
   @include background-color;
+  @include page-grid;
 
   pointer-events: none;
- 
+
   position: fixed;
   z-index: 10;
   top: 0;
@@ -13,13 +13,13 @@
 
   grid-column: 1/-1;
 
+  box-sizing: border-box;
   height: 100vh;
-  padding-block: 30px;
+  padding-block: 20px; // 8px a + não sei o porque mais assim alinha.
 
   opacity: 0;
-  background-color: #fff;
 
-  transition: all 0.3 ease;
+  transition: all 0.3s ease;
 
   &:target {
     pointer-events: all;
@@ -38,6 +38,137 @@
       &-svg {
         @include setup-svg('/src/images/svg/close-icon.svg', #fff);
       }
+    }
+  }
+
+  &-nav {
+    height: 90vh;
+
+    &-ul {
+      display: flex;
+      flex-direction: column;
+      gap:22px;
+      list-style: none;
+      &-li {
+
+        &>a {
+          @include menu-style;
+        }
+
+      }
+    }
+  }
+}
+
+.language {
+  @include background-color;
+  @include page-grid;
+
+  pointer-events: none;
+
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform: translate(100%);
+
+  grid-column: 1/-1;
+
+  box-sizing: border-box;
+  height: 100vh;
+  padding-block: 20px; // 8px a + não sei o porque mais assim alinha.
+
+  opacity: 0;
+
+  transition: all 0.3s ease;
+
+  &:target {
+    pointer-events: all;
+    transform: translate(0);
+    opacity: 1;
+  }
+
+
+  &-top {
+    display: flex;
+    grid-column: 1/-1;
+    flex-direction: row;
+    justify-content: space-between;
+    &-logo{
+      &-svg{
+        @include setup-svg('/src/images/svg/back.svg',#fff);
+      }
+    }
+  }
+
+  &-nav {
+    height: 90vh;
+
+    &-ul {
+      display: flex;
+      flex-direction: column;
+      gap:22px;
+      list-style: none;
+      &-li {
+
+        &>a {
+          @include menu-style;
+        }
+
+      }
+    }
+  }
+}
+
+.canhelp {
+  @include background-color;
+  @include page-grid;
+
+  pointer-events: none;
+
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform: translate(100%);
+
+  grid-column: 1/-1;
+
+  box-sizing: border-box;
+  height: 100vh;
+  padding-block: 20px; // 8px a + não sei o porque mais assim alinha.
+
+  opacity: 0;
+
+  transition: all 0.3s ease;
+
+  &:target {
+    pointer-events: all;
+    transform: translate(0);
+    opacity: 1;
+  }
+
+
+  &-top {
+    display: flex;
+    grid-column: 1/-1;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-right {
+      &-svg {
+        @include setup-svg('/src/images/svg/close-icon.svg', #fff);
+      }
+    }
+  }
+
+  &-content{
+    grid-column: 1/-1;
+    height: 90vh;
+    &-h2title{
+      @include h2-style;
     }
   }
 }

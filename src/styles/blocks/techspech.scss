@@ -1,4 +1,27 @@
-.techspech{
+.techspech {
   @include page-grid;
 
+  padding-block: 50px;
+  background-color: #05040B;
+  &-title {
+    @include h2-style;
+  }
+
+  &-background {
+    grid-column: 1/-1;
+
+    &-img {
+      display: inline-block;
+
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      max-width: 800px; // Limite para não crescer infinitamente em telas ultra-wide
+      margin: 0 auto;
+
+      background-image: url('/src/images/background/background-techspech-mobb.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
 }

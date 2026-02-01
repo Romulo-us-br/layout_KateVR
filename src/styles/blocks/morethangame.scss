@@ -1,4 +1,35 @@
-.more{
+.morethangame {
   @include page-grid;
 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding-block: 30px;
+
+  background-color: #05040B;
+  
+  &-info {
+    grid-column: 1/-1;
+
+    &-title {
+      @include h2-style;
+    }
+
+    &-subtitle {
+      @include subtitle-style;
+    }
+  }
+
+  &-content {
+    grid-column: 1/-1;
+
+    &-title {
+      @include h3-style;
+    }
+
+    &-desc {
+      @include normaltext-style;
+    }
+  }
 }

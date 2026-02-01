@@ -1,4 +1,20 @@
 .whykat{
   @include page-grid;
 
+  padding-block: 50px;
+  &-title{
+    @include h2-style;
+
+    grid-column: 1/-1;
+    padding-bottom: 12px;
+  }
+  &__content{
+    grid-column: 1/-1;
+    &-h3title{
+      @include h3-style;
+    }
+    &-desc{
+      @include normaltext-style;
+    }
+  }
 }

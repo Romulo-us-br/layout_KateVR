@@ -57,8 +57,26 @@
     font-weight: 400;
     color: #05C2DF;
   }
+
 }
 
+@mixin footer-style {
+  @include topography-basic;
+
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #fff;
+}
+
+@mixin footercontact-style {
+  @include topography-basic;
+
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 100%;
+  color: #929292;
+}
 
 
 @mixin normaltext-style {
@@ -82,6 +100,10 @@
   color: #fff;
 
   background-color: #05C2DF;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 @mixin h2-style {
@@ -106,6 +128,18 @@
   font-weight: 400;
   line-height: 100%;
   color: #05C2DF;
+}
+
+@mixin menu-style {
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 130%;
+  color: #fff;
+  list-style: none;
+
+  &:hover {
+    color: #05C2DF;
+  }
 }
 
 @mixin h3-style {
@@ -153,49 +187,77 @@
 }
 
 // tamanhos de tela
+$breakpoints: (
+  'tablet':744px,
+  'desktop':1200px,
+  'large':1600px
+);
 
-@mixin on-tablet {
-  @media(min-width:744px) {
-    @content;
-  }
-}
+@mixin device($size: 744px, $type: 'min') {
+  // Busca o valor no mapa. Se não existir, usa o valor literal (ex: 500px)
+  $width: map.get($breakpoints, $size );
+  $value: if($width, $width, $size);
 
-@mixin on-desktop {
-  @media(min-width: 1200px) {
-    @content;
-  }
-}
+  @if $type == 'max' {
+    // Para max-width, geralmente subtraímos 1px para não haver conflito
+    @media (max-width: #{$value}) {
+      @content;
+    }
+  } @else {
 
-@mixin onlarge-desktop {
-  @media(min-width: 1600px) {
-    @content;
+    @media (min-width: #{$value}) {
+      @content;
+    }
   }
 }
 
 // grids configs
 
-@mixin page-grid {
+@mixin page-grid($padd: null) {
+  $is-dynamic: if($padd == null, true, false);
+  
+  // o usuario passou valor vazio? se sim recebe true, se não recebe falso, ou seja se for true ele entra nos include do device e atribui o valor para o is-dynamic, se não ele mantem o valor passado.
+
   --columns: 2; // 6 12 16
 
+  // Se $is-dynamic for true: O mixin entende: "Ok, ele quer que eu use os valores padrão (20px no mobile, 30px no tablet, etc.)."
+
+  // Se $is-dynamic for false: O mixin entende: "Ele me deu um valor fixo, então vou ignorar as trocas automáticas de padding nos breakpoints e manter o que ele me deu."
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);
-  padding-inline: 20px;
+  padding-inline: if($is-dynamic, 20px, $padd); // Sendo $is-dynamic false, ou seja eu passei um valor, ele ignora o valor padrão 20px, e atribui o valor passado a variavel $padd, e esse valor vai ser mantido, pois todos os if-dynamic abaixo serão false
 
-  @include on-tablet {
+  @include device {
     --columns: 6;
 
-    padding-inline: 30px;
+    @if $is-dynamic {
+      padding-inline: 30px;
+    }
   }
 
-  @include on-desktop {
+  @include device('desktop') {
     --columns: 12;
 
-    padding-inline: 110px;
+    @if $is-dynamic {
+      padding-inline: 110px;
+    }
   }
 
-  @include onlarge-desktop {
+  @include device('large') {
     --columns: 18;
 
-    padding-inline: 254px;
+    @if $is-dynamic {
+      padding-inline: 254px;
+    }
   }
+}
+
+@mixin footer-ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  padding: 0;
+
+  list-style: none;
 }
