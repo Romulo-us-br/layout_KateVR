@@ -200,13 +200,11 @@ $breakpoints: (
   $width: map.get($breakpoints, $size );
   $value: if($width, $width, $size);
 
-  
   @if $type == 'max' {
-    // Para max-width, geralmente subtraímos 1px para não haver conflito
     @media (max-width: #{$value}) {
       @content;
     }
-
+    
   } @else {
     @media (min-width: #{$value}) {
       @content;
