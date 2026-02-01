@@ -203,6 +203,7 @@ $breakpoints: (
     @media (max-width: #{$value}) {
       @content;
     }
+    
   } @else {
 
     @media (min-width: #{$value}) {
