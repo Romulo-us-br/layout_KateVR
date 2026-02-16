@@ -57,7 +57,7 @@
   &>span {
     // apenas o span dentro da classe que foi chamado vai ser selecionado
     font-weight: 400;
-    color: #05C2DF;
+    color: $azul;
   }
 
 }
@@ -88,12 +88,16 @@
   font-weight: 500;
   line-height: 150%;
   color: #929292;
+
+  &>a {
+    color: $azul;
+  }
 }
 
 @mixin buttons-style {
   @include topography-basic;
 
-  height: 40px;
+  height: 48px;
   border-radius: 4px;
 
   font-size: 14px;
@@ -101,7 +105,7 @@
   line-height: 130%;
   color: #fff;
 
-  background-color: #05C2DF;
+  background-color: $azul;
 
   &:hover {
     opacity: 0.8;
@@ -115,10 +119,11 @@
   font-weight: 900;
   line-height: 100%;
   color: #fff;
+  text-transform: uppercase;
 
   &>span {
     font-weight: 400;
-    color: #05C2DF;
+    color: $azul;
 
   }
 }
@@ -129,7 +134,18 @@
   font-size: 12px;
   font-weight: 400;
   line-height: 100%;
-  color: #05C2DF;
+  color: $azul;
+}
+
+@mixin subtitle-gray-style {
+  @include topography-basic;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 150%;
+  color:#929292;
+
+  opacity: 0.7;
 }
 
 @mixin menu-style {
@@ -140,7 +156,7 @@
   list-style: none;
 
   &:hover {
-    color: #05C2DF;
+    color: $azul;
   }
 }
 
@@ -168,7 +184,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 100%;
-  color: #05C2DF;
+  color: $azul;
 }
 
 @mixin input-style {
@@ -204,8 +220,10 @@ $breakpoints: (
     @media (max-width: #{$value}) {
       @content;
     }
-    
-  } @else {
+
+  }
+
+ @else {
     @media (min-width: #{$value}) {
       @content;
     }
@@ -216,7 +234,7 @@ $breakpoints: (
 
 @mixin page-grid($padd: null) {
   $is-dynamic: if($padd == null, true, false);
-  
+
   // o usuario passou valor vazio? se sim recebe true, se não recebe falso, ou seja se for true ele entra nos include do device e atribui o valor para o is-dynamic, se não ele mantem o valor passado.
 
   --columns: 2; // 6 12 16
@@ -245,7 +263,7 @@ $breakpoints: (
   }
 
   @include device('large') {
-    --columns: 18;
+    --columns: 16;
 
     @if $is-dynamic {
       padding-inline: 254px;
@@ -261,4 +279,19 @@ $breakpoints: (
   padding: 0;
 
   list-style: none;
+}
+
+@mixin blueinput-style {
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid $gray;
+
+  color: #fff;
+
+  background-color: transparent;
+
+  &:focus {
+    border-bottom: 1px solid $azul;
+    outline: none;
+  }
 }

@@ -1,23 +1,51 @@
 .about {
   @include page-grid;
 
+  padding-block: 100px 50px;
+
+  &-title {
+    @include h2-style;
+
+    order: 1;
+
+    @include device {
+      grid-column: 4/-1;
+      grid-row: 1;
+      padding-left: 30px;
+    }
+
+  }
+
+  &-background {
+    grid-column: 1/-1;
+    order: 2;
+    width: 100%;
+
+    @include device {
+      grid-column: 1/span 3;
+      grid-row: 1/ span 3;
+    }
+
+    &-img {
+      display: block;
+      width: 100%;
+      min-height: 100%;
+    }
+  }
+
   &__content {
     display: flex;
     grid-column: 1/-1;
     flex-direction: column;
     gap: 20px;
+    order: 3;
 
-    &-title {
-      @include h2-style;
-    }
+    @include device {
+      grid-column: 4/-1;
+      grid-row: 2;
+      padding-left: 30px;
 
-    &-background {
-      width: 100%;
 
-      &-img {
-        display: block;
-        width: 100%;
-      }
     }
 
     &-desc {
@@ -27,16 +55,22 @@
 
 
   &__nice {
+    display: flex;
     grid-column: 1/-1;
+    order: 4;
     padding-block: 50px;
+
     &-content {
+
       &-subtitle {
         @include subtitle-style;
       }
-      &-title{
+
+      &-title {
         @include h2-style;
       }
-      &-desc{
+
+      &-desc {
         @include normaltext-style;
       }
     }

@@ -1,16 +1,17 @@
 .morethangame {
   @include page-grid;
 
-  display: flex;
-  flex-direction: column;
   gap: 20px;
-
   padding-block: 30px;
-
   background-color: #05040B;
-  
+
   &-info {
     grid-column: 1/-1;
+
+    @include device {
+      text-align: center;
+
+    }
 
     &-title {
       @include h2-style;
@@ -23,6 +24,16 @@
 
   &-content {
     grid-column: 1/-1;
+
+    @include device('tablet', 'min') {
+      grid-column: span 3;
+      text-align: center;
+
+    }
+
+        @include device('large') {
+      grid-column: span 4;
+    }
 
     &-title {
       @include h3-style;

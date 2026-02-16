@@ -17,14 +17,38 @@
         <a href="#" class="link">
           <img src="src/images/icons/icon-logo.png" alt="KatVR logotipo" class="logos-icons header__menu-logo-img">
         </a>
+        <select class="header__menu-selection">
+          <option value="En" class="selection-opt">En</option>
+          <option value="Pt-Br" class="selection-opt">Pt-Br</option>
+        </select>
       </div>
       <div class="header__menu-right">
-        <a href="#menu" class="link">
+        <a href="#menu" class="link ondesktop-hide">
           <span class="header__menu-right-svg logos-icons"></span>
         </a>
-      </div>
+        <nav class="header__menu-right-nav ondesktop-show">
+          <ul>
+            <li class="right-nav-li">
+              <a href="#about">About</a>
+            </li>
+            <li class="right-nav-li">
+              <a href="#tech">Tech</a>
+            </li>
+            <li class="right-nav-li">
+              <a href="#Benefits">Benefits</a>
+            </li>
+            <li class="right-nav-li">
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+          <a href="#buynow">
+            <button class="header__menu-right-button">Buy Now</button>
 
+          </a>
+        </nav>
+      </div>
     </div>
+
     <div class="language" id="language">
       <div class="language-top">
         <div class="language-top-logo">
@@ -123,9 +147,238 @@
         <h2 class="canhelp-content-h2title">
           how can we <span>help</span> you?
         </h2>
+        <p class="canhelp-content-desc">Welcome to our help center. Our goal is to make the process of
+          getting acquainted and purchase as easy and pleasant as possible. Need help with your KAT VR loco product?
+          Many product questions can be resolved by reviewing our Product Support <a href="#faq" class="link">FAQs.</a>
+          <br><br>
+          Please also feel free to <a href="#contact" class="link">Contact Us</a> directly should you need anything
+          further. We’re happy to help.
+
+        </p>
+        <nav class="canhelp-content-info">
+          <ul class="canhelp-content-info-ul">
+            <li class="canhelp-content-info-ul-li">
+              <a href="#" class="link-azul link">Instruction manual</a>
+            </li>
+            <li class="canhelp-content-info-ul-li">
+              <a href="#" class="link-azul link">Where to go for a warranty</a>
+            </li>
+            <li class="canhelp-content-info-ul-li">
+              <a href="#" class="link-azul link">Service Policy</a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="canhelp-content-contact">
+          <ul class="canhelp-content-contact-ul">
+            <li class="canhelp-content-contact-ul-li">
+              <a href="#" class="link">+86-0571-86105373</a>
+            </li>
+            <li class="canhelp-content-contact-ul-li">
+              <a href="#" class="link">global@katvr.com</a>
+            </li>
+            <li class="canhelp-content-contact-ul-li">
+              <a href="#" class="link">overseas@katvr.com</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="faq" id="faq">
+      <div class="faq-top">
+        <div class="faq-top-logo">
+
+        </div>
+        <div class="faq-top-right">
+          <a href="#" class="link">
+            <span class="faq-top-right-svg logos-icons"></span>
+          </a>
+        </div>
+      </div>
+      <div class="faq-content">
+        <h2 class="faq-content-h2title">
+          FREQUENTLY ASKED <span>questions</span>
+        </h2>
+        <p class="faq-content-subtitle">What makes KAT loco different from other systems?</p>
+        <p class="faq-content-desc">
+          Despite being approached from many different angles, all traditional VR Locomotion systems including
+          roomscale, teleportation, and free locomotion failed to provide an optimal solution capable of integrating
+          high immersion with convenience. KAT loco does all of that without repeating their flaws. Our system offers a
+          complete and versatile solution for an affordable price what makes it a perfect choice for home-use. It is
+          also 100% user friendly, wireless, universally compatible, and more! It even offers decoupled head and body
+          directions!
+        </p>
+        <p class="faq-content-lastupdate">
+          Last updated: Wed, June 12 2019 7:07 PM UTC +03:00
+        </p>
+
+        <nav class="faq-content-nav">
+          <ul class="faq-content-nav-ul">
+            <li class="faq-content-nav-ul-li">
+              <a href="#" class="link-azul link">Instruction manual</a>
+            </li>
+            <li class="faq-content-nav-ul-li">
+              <a href="#" class="link-azul link">Where to go for a warranty</a>
+            </li>
+            <li class="faq-content-nav-ul-li">
+              <a href="#" class="link-azul link">Service Policy</a>
+            </li>
+          </ul>
+        </nav>
+
       </div>
 
     </div>
+
+    <div class="buynow" id="buynow">
+      <div class="buynow-top">
+        <div class="buynow-top-logo">
+          <a href="#" class="link">
+            <img src="src/images/icons/icon-logo.png" alt="KatVR logotipo" class="logos-icons">
+          </a>
+        </div>
+        <div class="buynow-top-right">
+          <a href="#" class="link">
+            <span class="buynow-top-right-svg logos-icons"></span>
+          </a>
+        </div>
+      </div>
+
+      <input type="radio" name="buynow-checkout-nav" id="step1" checked>
+      <input type="radio" name="buynow-checkout-nav" id="step2">
+      <input type="radio" name="buynow-checkout-nav" id="step3">
+
+      <nav class="buynow-nav">
+        <ul class="buynow-nav-ul">
+          <li class="buynow-nav-ul-li">
+            <label for="step1">Place order</label>
+          </li>
+          <li class="buynow-nav-ul-li">
+            <label for="step2">Pay</label>
+          </li>
+          <li class="buynow-nav-ul-li">
+            <label for="step3">Complete</label>
+          </li>
+        </ul>
+      </nav>
+      <div class="buynow-window">
+        <div class="buynow-window-slider">
+          <section class="buynow-window-slider-page" id="order">
+            <form class="buynow-window-slider-page-order">
+              <div class="buynow-window-slider-page-order-qtd">
+                <label>Quantity</label>
+                <select name="quantity selection" class="buynow-window-slider-page-order-qtd-selection">
+                  <option value="1" class="selection-opt">1</option>
+                  <option value="2" class="selection-opt">2</option>
+                  <option value="3" class="selection-opt">3</option>
+                  <option value="4" class="selection-opt">4</option>
+                </select>
+              </div>
+              <div class="buynow-window-slider-page-order-price">
+                <label>Price</label>
+                <h2 class="buynow-window-slider-page-order-price-h2title"><span>1200$</span></h2>
+              </div>
+              <div class="buynow-window-slider-page-order-infos">
+                <input type="text" placeholder="First Name*">
+                <input type="text" placeholder="Last Name*">
+                <input type="text" placeholder="Email*">
+                <input type="text" placeholder="Phone Number*">
+              </div>
+              <div class="buynow-window-slider-page-order-selections">
+                <label class="label-name">Country*</label>
+                <select name="quantity selection" class="buynow-window-slider-page-order-qtd-selection">
+                  <option value="1" class="selection-opt">Ukraine</option>
+                  <option value="2" class="selection-opt">Brasil</option>
+                  <option value="3" class="selection-opt">Portugal</option>
+                  <option value="4" class="selection-opt">Ceará</option>
+                </select>
+
+                <label class="label-name">City*</label>
+                <select name="quantity selection" class="buynow-window-slider-page-order-qtd-selection">
+                  <option value="1" class="selection-opt">Kiev</option>
+                  <option value="2" class="selection-opt">Juazeiro do Norte</option>
+                  <option value="3" class="selection-opt">Pernambuco</option>
+                  <option value="4" class="selection-opt">Moscou</option>
+                </select>
+              </div>
+              <div class="buynow-window-slider-page-order-ship">
+                <input type="text" placeholder="Shipping Address*">
+                <input type="text" placeholder="Shipping Address 2*">
+              </div>
+              <button class="buynow-window-slider-page-order-button">purchase</button>
+            </form>
+
+          </section>
+          <section class="buynow-window-slider-page" id="pay">
+            <form class="buynow-window-slider-page-pay">
+              <div class="buynow-window-slider-page-pay-qtd">
+                <label>Quantity</label>
+                <select name="quantity selection" class="buynow-window-slider-page-pay-qtd-selection">
+                  <option value="1" class="selection-opt">1</option>
+                  <option value="2" class="selection-opt">2</option>
+                  <option value="3" class="selection-opt">3</option>
+                  <option value="4" class="selection-opt">4</option>
+                </select>
+              </div>
+              <div class="buynow-window-slider-page-pay-price">
+                <label>Price</label>
+                <h2 class="buynow-window-slider-page-pay-price-h2title"><span>1200$</span></h2>
+              </div>
+
+              <div class="buynow-window-slider-page-pay-cardnumber">
+                <p class="buynow-window-slider-page-pay-cardnumber-title">Card Number*</p>
+                <div class="buynow-window-slider-page-pay-cardnumber-container">
+                  <input type="text" maxlength="4" placeholder="1234"
+                    class="buynow-window-slider-page-pay-cardnumber-container-cardpart">
+                  <input type="text" maxlength="4" placeholder="0000"
+                    class="buynow-window-slider-page-pay-cardnumber-container-cardpart">
+                  <input type="text" maxlength="4" placeholder="0000"
+                    class="buynow-window-slider-page-pay-cardnumber-container-cardpart">
+                  <input type="text" maxlength="4" placeholder="0000"
+                    class="buynow-window-slider-page-pay-cardnumber-container-cardpart">
+                </div>
+              </div>
+              <div class="buynow-window-slider-page-pay-cardholder">
+                <p class="buynow-window-slider-page-pay-cardholder-name">
+                  Card Holder Name*
+                </p>
+                <input type="text" class="buynow-window-slider-page-pay-cardholder-input">
+              </div>
+              <div class="buynow-window-slider-page-pay-cardback">
+
+                <div>
+                  <p class="buynow-window-slider-page-pay-cardback-exp">
+                    Expiration date*
+                  </p>
+                  <input type="text" placeholder="MM / YY" class="buynow-window-slider-page-pay-cardback-expinput">
+                </div>
+
+                <div>
+                  <p class="buynow-window-slider-page-pay-cardback-descccv">CCV*</p>
+                  <input type="text" maxlength="3" placeholder="000">
+                </div>
+
+              </div>
+              <button class="buynow-window-slider-page-pay-button">purchase</button>
+
+            </form>
+          </section>
+
+          <section class="buynow-window-slider-page" id="complete">
+            <div class="buynow-window-slider-page-completed">
+              <h2 class="buynow-window-slider-page-completed-h2title"> Thank you for <span>Your</span> order!</h2>
+              <p>Your order has been placed and is being processed. You will recive an email with the order details</p>
+              <a href="#home" class="link">
+                <button class="buynow-window-slider-page-completed-button">Back to Home</button>
+              </a>
+            </div>
+          </section>
+        </div>
+      </div>
+
+    </div>
+
   </header>
 
 
@@ -145,12 +398,26 @@
         <p class="apresentation-content-value"> 1200$</p>
         <span class="play-background logos-icons"></span>
         <a href="#buynow" class="link-button">
-          <button class="apresentation-content-button">Buy now</button>
+          <button class="apresentation-content-button ondesktop-hide">Buy now</button>
         </a>
       </div>
+      <nav class="apresentation-nav ondesktop-show">
+        <div class="nav-left">
+          <a href="#" class="nav-left-faq link">Faq</a>
+          <a href="#" class="nav-left-help link">help</a>
+        </div>
+        <div class="nav-center">
+          <a href="#" class="nav-center-more link">more</a>
+        </div>
+        <div class="nav-right">
+          <a href="#" class="nav-right-previus link">Previus</a>
+          <a href="#" class="nav-right-next link">next</a>
+        </div>
+      </nav>
+
     </section>
-    
- 
+
+
 
     <section class="morethangame" id="morethangame">
       <div class="morethangame-info">
@@ -162,12 +429,15 @@
         </p>
       </div>
       <div class="morethangame-content">
+        <img src="src/images/morethan/education-bk.png" class="onmobile-hide">
         <h3 class="morethangame-content-title">EDUCATION</h3>
         <p class="morethangame-content-desc">Create aducational simulations, trainings and much more with<span
             class="ontablet-hide">...</span><span class="onmobile-hide"> unlimited virtual space and minimum physical
             space</span></p>
       </div>
       <div class="morethangame-content">
+        <img src="src/images/morethan/realstate-bk.png" class="onmobile-hide">
+
         <h3 class="morethangame-content-title">REAL ESTATE</h3>
         <p class="morethangame-content-desc">Desighn architectural projects in a deeply realistic environment<span
             class="ontablet-hide">...</span><span class="onmobile-hide"> allowing visitors to freely walk around, and
@@ -175,12 +445,16 @@
           </span></p>
       </div>
       <div class="morethangame-content">
+        <img src="src/images/morethan/fitness-bk.png" class="onmobile-hide">
+
         <h3 class="morethangame-content-title">FITNESS</h3>
         <p class="morethangame-content-desc">Combine business with pleasure, and discover countless ways<span
             class="ontablet-hide">...</span><span class="onmobile-hide"> to stay fit while playing your favorite VR
             Games!</span></p>
       </div>
       <div class="morethangame-content">
+        <img src="src/images/morethan/social-bk.png" class="onmobile-hide">
+
         <h3 class="morethangame-content-title">SOCIAL INTERACTIONS</h3>
         <p class="morethangame-content-desc">Hang out with your friends in the virtual world when you can’t <span
             class="ontablet-hide">...</span><span class="onmobile-hide"> meet space requirements</span></p>
@@ -188,12 +462,14 @@
     </section>
 
     <section class="about" id="about">
+      <h2 class="about-title">ABOUT <span>PRODUCT</span></h2>
+      <div class="about-background">
+        <img src="src/images/background/background-about.png" alt="background ilustrativo sobre a empresa"
+          class="about-background-img">
+      </div>
       <div class="about__content">
-        <h2 class="about__content-title">ABOUT <span>PRODUCT</span></h2>
-        <div class="about__content-background">
-          <img src="src/images/background/background-about.png" alt="background ilustrativo sobre a empresa"
-            class="about__content-background-img">
-        </div>
+
+
         <p class="about__content-desc">KAT loco is a foot-based VR locomotion system that gives complete physical
           control over
           lower-body actions, allowing you to freely walk, run, and carry out just any other movement in virtual
@@ -211,6 +487,9 @@
             suppliers of VR games’ & simulations’ equipment
           </p>
         </div>
+        <div class="about__nice-back">
+          <img src="src/images/background/aboutus-back.png" alt="" class="about__nice-back-img onmobile-hide">
+        </div>
       </div>
 
     </section>
@@ -219,27 +498,91 @@
         TECH <span>SPECS</span>
       </h2>
       <div class="techspech-background">
-        <span class="techspech-background-img"></span>
+        <div class="techspech-background-img">
+          <input type="checkbox" name="tech-spechs" id="toggle-sensor" class="techspech-input">
+          <label for="toggle-sensor" class="techspech-btn" style="top: 5%; left: 39%;">+</label>
+
+          <div class="techspech-info info-sensor">
+            <h3>SENSOR</h3>
+            <p>Weight: 35g/1.23oz each</p>
+            <p>
+              Dimension: 50mm/1.97in<br>
+              24mm/0.94in
+            </p>
+            <p>
+              Light: LED lights
+            </p>
+          </div>
+
+          <input type="checkbox" name="tech-spechs" id="toggle-battery" class="techspech-input">
+          <label for="toggle-battery" class="techspech-btn" style="top: 45%; left: 66%;">+</label>
+
+          <div class="techspech-info info-battery">
+            <h3>BATTERIES</h3>
+            <p>Type: Lthium-lon polymer batteries </p>
+            <p>
+              Capacity: 370mAh
+
+            </p>
+            <p>
+
+              Battery life: 10h of continuous<br>use 150 hours on stand by
+            </p>
+            <p>
+              Charging: Fast charging - 1 hour
+
+            </p>
+            <p>
+              Charging voltage and current: 5V = 0.5A
+
+            </p>
+
+          </div>
+
+          <input type="checkbox" name="tech-spechs" id="toggle-connection" class="techspech-input">
+          <label for="toggle-connection" class="techspech-btn" style="top: 68%; left: 32%;">+</label>
+
+          <div class="techspech-info info-connection">
+            <h3>CONNECTION</h3>
+            <p>Wireless: Bluetooth 4.2</p>
+            <p>Signal range: 5m</p>
+            <p>Receiver: USB 2.0 and above</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <section class="whykat" id="whykat">
       <h2 class="whykat-title">WHY <span>KAT LOCO?</span></h2>
 
-      <div class="whykat__content">
-        <h3 class="whykat__content-h3title">UNIVERSALLY COMPATIBLE</h3>
-        <p class="whykat__content-desc">KAT Loco offers universal compatibility across all major VR headsets and
-          platforms...</p>
-      </div>
-      <div class="whykat__content">
-        <h3 class="whykat__content-h3title">VR/PC CONTROL PANEL</h3>
-        <p class="whykat__content-desc">Our Multifunctional Software allows for quick access to KAT Loco’s control panel
-          both from...</p>
-      </div>
-      <div class="whykat__content">
-        <h3 class="whykat__content-h3title">WIRELESS SENSORS</h3>
-        <p class="whykat__content-desc">What makes it even more advanced, KAT Loco is entirely wireless, and comes with
-          a...</p>
+      <div class="whykat-container">
+        <div class="whykat__content">
+          <div class="whykat__content-background onmobile-hide">
+            <img src="src/images/why/why01.png" alt="" class="">
+          </div>
+          <h3 class="whykat__content-h3title">UNIVERSALLY COMPATIBLE</h3>
+          <p class="whykat__content-desc">KAT Loco offers universal compatibility across all major VR headsets and
+            platforms...</p>
+        </div>
+        <div class="whykat__content">
+          <div class="whykat__content-background onmobile-hide">
+            <img src="src/images/why/why02.png" alt="" class="">
+          </div>
+          <h3 class="whykat__content-h3title">VR/PC CONTROL PANEL</h3>
+          <p class="whykat__content-desc">Our Multifunctional Software allows for quick access to KAT Loco’s control
+            panel
+            both from...</p>
+        </div>
+        <div class="whykat__content">
+          <div class="whykat__content-background onmobile-hide">
+            <img src="src/images/why/why03.png" alt="" class="">
+          </div>
+          <h3 class="whykat__content-h3title">WIRELESS SENSORS</h3>
+          <p class="whykat__content-desc">What makes it even more advanced, KAT Loco is entirely wireless, and comes
+            with
+            a...</p>
+        </div>
       </div>
 
 
@@ -256,14 +599,34 @@
         <input type="tel" class="contact-form-input" placeholder="Phone*" required>
         <textarea name="message" class="contact-form-textarea" placeholder="Write a Message for us..."
           required></textarea>
-        <button class="contact-form-button">
-          Contact Us
-        </button>
-        <p class="contact-form-subtitle">Our manager will reply you within 15 minutes</p>
+
+        <div class="form-button">
+          <button class="contact-form-button">
+            Contact Us
+          </button>
+          <a href="#" class="form-button-home onmobile-hide"></a>
+        </div>
+
       </form>
+      <p class="contact-form-subtitle">Our manager will reply you within 15 minutes</p>
+
+      <nav class="contact-contact onmobile-hide">
+        <ul class="contact-contact-ul">
+          <li class="contact-contact-ul-li">
+            <a href="tel:+86-0571-86105373" class="link">+86-0571-86105373</a>
+          </li>
+          <li class="contact-contact-ul-li">
+            <a href="mailto:global@katvr.com" class="link">global@katvr.com</a>
+          </li>
+          <li class="contact-contact-ul-li">
+            <a href="https://overseas@katvr.com" class="link">overseas@katvr.com</a>
+          </li>
+        </ul>
+      </nav>
 
     </section>
   </main>
+
   <footer class="footer">
     <a href="#home" class="link footer-linklogo">
       <img src="src/images/icons/icon-logo.png" alt="KatVR logotipo" class="logos-icons">
@@ -284,7 +647,7 @@
         </li>
       </ul>
     </nav>
-    <nav class="footer-contact">
+    <nav class="footer-contact ontablet-hide">
       <ul class="footer-contact-ul">
         <li class="footer-contact-ul-li">
           <a href="tel:+86-0571-86105373" class="link">+86-0571-86105373</a>
@@ -298,20 +661,21 @@
       </ul>
     </nav>
     <div class="footer-socialslogos">
-      <a href="#" class="link">
+      <a href="https://facebook.com" class="link">
         <span class="footer-socialslogos-face"></span>
       </a>
-      <a href="#" class="link">
+      <a href="https://x.com" class="link">
         <span class="footer-socialslogos-twit"></span>
       </a>
-      <a href="#" class="link">
+      <a href="https://youtube.com" class="link">
         <span class="footer-socialslogos-you"></span>
       </a>
-      <a href="#" class="link">
+      <a href="https://github.com" class="link">
         <span class="footer-socialslogos-git"></span>
       </a>
     </div>
   </footer>
+
 </body>
 
 </html>

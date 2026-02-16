@@ -3,14 +3,25 @@
 
   padding-block: 50px;
   background-color: #05040B;
+
   &-title {
+    grid-column: 1/-1;
+
     @include h2-style;
   }
 
   &-background {
+    display: flex;
     grid-column: 1/-1;
+    justify-content: center;
+
+    @include device {
+      grid-column: 1/-1;
+    }
 
     &-img {
+      position: relative;
+
       display: inline-block;
 
       aspect-ratio: 16 / 9;
@@ -23,5 +34,103 @@
       background-position: center;
       background-size: contain;
     }
+
+    // Estilo comum dos botões
+    .techspech-btn {
+      cursor: pointer;
+
+      position: absolute;
+      transform: translate(-50%, -50%); // Centraliza o botão exatamente no ponto da coordenada
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 62px; // Ajuste conforme seu Figma
+      height: 62px;
+      border: none;
+      border-radius: 50%;
+
+      color: white;
+
+      background-color: #00bcd4; // Cor do seu print
+
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+
+      // Coordenadas baseadas na sua imagem
+
+    }
+  }
+}
+
+.techspech-input {
+  display: none;
+
+  // Lógica para mostrar os cards específicos
+  &[id="toggle-sensor"]:checked~.info-sensor,
+  &[id="toggle-battery"]:checked~.info-battery,
+  &[id="toggle-connection"]:checked~.info-connection {
+    pointer-events: all;
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  // Lógica para animar o BOTÃO que vem logo após o input marcado
+  // Usamos o seletor "+" para garantir que apenas o label/botão vizinho mude
+  &:checked+.techspech-btn {
+    z-index: 2;
+    transform: translate(-50%, -50%) rotate(45deg); // Vira um "X" [cite: 2026-02-10]
+    background-color: $azul;
+  }
+}
+
+.techspech-info {
+  pointer-events: none; // Evita que o card bloqueie cliques enquanto invisível
+
+  position: absolute;
+  transform: translateY(10px);
+
+  // Posicione cada card perto do seu respectivo botão
+  font-family: Inter, sans-serif;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: all 0.3s ease;
+
+  &.info-sensor {
+    top: 0%;
+    left: 5%;
+  }
+
+  &>h3 {
+    font-weight: 900;
+    color: white;
+  }
+
+  &.info-battery {
+    top: 39%;
+    right: 0%;
+
+    &>h3 {
+      text-align: center;
+
+    }
+  }
+
+  &.info-connection {
+    top: 58%;
+    left: 0%;
+  }
+
+
+
+  &>p {
+    color: #929292;
   }
 }

@@ -1,19 +1,60 @@
-.whykat{
+.whykat {
   @include page-grid;
 
+  gap: 40px;
   padding-block: 50px;
-  &-title{
+
+  &-title {
     @include h2-style;
 
     grid-column: 1/-1;
     padding-bottom: 12px;
+    text-align: center;
   }
-  &__content{
+
+  &-container {
+    display: grid;
     grid-column: 1/-1;
-    &-h3title{
+    grid-template-columns: subgrid;
+  }
+
+  &__content {
+    grid-column: 1/-1;
+
+    @include device {
+      grid-column: span 2;
+      text-align: center;
+    }
+
+    @include device('desktop') {
+      grid-column: span 4;
+
+    }
+
+    @include device('large') {
+      &:nth-child(1) {
+        grid-column: 1/span 4;
+      }
+
+      &:nth-child(2) {
+        grid-column: 7/span 4;
+      }
+
+      &:nth-child(3) {
+        grid-column: 13/span 4;
+      }
+    }
+
+    &-background {
+      display: flex;
+      justify-content: center;
+    }
+
+    &-h3title {
       @include h3-style;
     }
-    &-desc{
+
+    &-desc {
       @include normaltext-style;
     }
   }

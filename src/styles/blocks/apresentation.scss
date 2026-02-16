@@ -2,10 +2,19 @@
   @include page-grid;
 
   &-background {
-    position: relative;
     grid-column: 1/-1;
 
-  
+    @include device('tablet', 'min') {
+      grid-column: 3/-1;
+    }
+
+    @include device('desktop') {
+      grid-column: span 6;
+    }
+
+    @include device('large') {
+      grid-column: span 8;
+    }
 
     &-img {
       display: inline-block;
@@ -15,7 +24,22 @@
   }
 
   &-content {
+    position: relative;
     grid-column: 1/-1;
+
+    @include device {
+      grid-column: span 2;
+      grid-row: 1;
+      padding-top: 60px;
+    }
+
+    @include device('desktop') {
+      grid-column: span 6;
+    }
+
+    @include device('large') {
+      grid-column: span 8;
+    }
 
     &-title {
       @include h1-style;
@@ -40,7 +64,26 @@
       width: 100%;
 
       @include buttons-style;
+
+      @include device {
+        position: absolute;
+        bottom: 5%;
+        left: 100%;
+        width: 100%;
+      }
+
+      @include device('desktop') {
+        left: 50%;
+      }
     }
+  }
+
+  &-nav {
+    display: flex;
+    grid-column: 1/-1;
+    justify-content: space-between;
+    padding-bottom: 90px;
+
   }
 }
 
@@ -57,3 +100,65 @@
 
 }
 
+.nav {
+  &-left {
+    display: flex;
+    gap: 40px;
+
+    &>a {
+      color: white;
+    }
+  }
+
+  &-center {
+    &-more {
+      cursor: pointer;
+
+      position: relative;
+
+      display: inline-flex; // Para alinhar melhor a setinha centralizada
+      flex-direction: column;
+      align-items: center;
+
+      color: $azul;
+
+      &::after {
+        content: "";
+
+        position: absolute;
+        bottom: -15px; // Ajuste conforme a distância no seu Figma [cite: 2026-02-10]
+        transform: translateY(-5px);
+
+        // Criando o triângulo [cite: 2026-02-10]
+        width: 0;
+        height: 0;
+        border-top: 8px solid $azul; // A cor vem da sua variável [cite: 2026-02-10]
+        border-right: 6px solid transparent;
+        border-left: 6px solid transparent;
+
+        // Estado inicial (escondido) [cite: 2026-02-10]
+        opacity: 0;
+
+        transition: all 0.3s ease;
+      }
+
+      &:hover::after {
+        transform: translateY(0); // Faz a setinha "descer" suavemente [cite: 2026-02-10]
+        opacity: 1;
+      }
+    }
+  }
+
+  &-right {
+    display: flex;
+    gap: 100px;
+
+    &>a {
+      color: #929292;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}

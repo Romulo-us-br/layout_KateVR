@@ -47,8 +47,9 @@
     &-ul {
       display: flex;
       flex-direction: column;
-      gap:22px;
+      gap: 22px;
       list-style: none;
+
       &-li {
 
         &>a {
@@ -60,7 +61,18 @@
   }
 }
 
-.language {
+
+.label-name{
+  grid-row: 1;
+}
+
+
+
+body:has([id="buynow"]:target) {
+  overflow: hidden;
+}
+
+.buynow {
   @include background-color;
   @include page-grid;
 
@@ -73,11 +85,12 @@
   left: 0;
   transform: translate(100%);
 
+  overflow-y: auto;
   grid-column: 1/-1;
 
   box-sizing: border-box;
   height: 100vh;
-  padding-block: 20px; // 8px a + não sei o porque mais assim alinha.
+  padding-top: 20px; // 8px a + não sei o porque mais assim alinha.
 
   opacity: 0;
 
@@ -89,73 +102,13 @@
     opacity: 1;
   }
 
-
   &-top {
     display: flex;
     grid-column: 1/-1;
     flex-direction: row;
     justify-content: space-between;
-    &-logo{
-      &-svg{
-        @include setup-svg('/src/images/svg/back.svg',#fff);
-      }
-    }
-  }
 
-  &-nav {
-    height: 90vh;
-
-    &-ul {
-      display: flex;
-      flex-direction: column;
-      gap:22px;
-      list-style: none;
-      &-li {
-
-        &>a {
-          @include menu-style;
-        }
-
-      }
-    }
-  }
-}
-
-.canhelp {
-  @include background-color;
-  @include page-grid;
-
-  pointer-events: none;
-
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  right: 0;
-  left: 0;
-  transform: translate(100%);
-
-  grid-column: 1/-1;
-
-  box-sizing: border-box;
-  height: 100vh;
-  padding-block: 20px; // 8px a + não sei o porque mais assim alinha.
-
-  opacity: 0;
-
-  transition: all 0.3s ease;
-
-  &:target {
-    pointer-events: all;
-    transform: translate(0);
-    opacity: 1;
-  }
-
-
-  &-top {
-    display: flex;
-    grid-column: 1/-1;
-    flex-direction: row;
-    justify-content: space-between;
+    height: 5vh;
 
     &-right {
       &-svg {
@@ -164,11 +117,269 @@
     }
   }
 
-  &-content{
+  &-nav {
+    z-index: 10;
+    top: 0;
     grid-column: 1/-1;
-    height: 90vh;
-    &-h2title{
-      @include h2-style;
+
+    &-ul {
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      list-style: none;
+
+
+      &-li {
+        &>label {
+          @include subtitle-gray-style;
+
+          &:hover {
+            color: $azul;
+          }
+        }
+      }
     }
   }
+
+  &-window {
+    overflow: hidden;
+    grid-column: 1/-1;
+
+    /* Esconde as páginas que não estão em foco */
+    width: 100%;
+    height: 85vh;
+
+    &-slider {
+      display: flex;
+      width: 300%;
+
+      /* Três páginas */
+      transition: transform 0.5s ease-in-out;
+
+      &-page {
+        width: 100%;
+        padding-top: 105px;
+
+        @include normaltext-style;
+
+        &-completed {
+          text-align: center;
+
+          &-h2title {
+            @include h2-style;
+          }
+
+          &-button {
+            @include buttons-style;
+
+            width: 100%;
+          }
+        }
+
+        &-order {
+          display: grid;
+          grid-template-columns: subgrid;
+          gap: 30px;
+
+          &-qtd {
+            display: flex;
+            grid-column: 1/span 1;
+            flex-direction: column;
+
+            &>label {
+              @include normaltext-style;
+            }
+
+            &-selection {
+              width: 90px;
+              height: 40px;
+
+              // border: none;
+              // outline: none;
+              color: #fff;
+              text-align: center;
+
+              background-color: transparent;
+
+              &>option {
+                cursor: pointer;
+                color: #fff;
+                background-color: #191536;
+              }
+            }
+          }
+
+          &-price {
+            grid-column: 2/span 1;
+
+            &-h2title {
+              @include h2-style;
+            }
+          }
+
+          &-infos {
+            display: flex;
+            grid-column: 1/span 2;
+            flex-direction: column;
+            gap: 20px;
+
+            &>input {
+              @include blueinput-style;
+            }
+          }
+
+          &-button {
+            grid-column: 1/ span 2;
+
+            @include buttons-style;
+          }
+
+          &-selections {
+            display: grid;
+            grid-column: 1/span 2;
+          }
+
+          &-ship {
+            display: flex;
+            grid-column: 1/span 2;
+            flex-direction: column;
+            gap: 30px;
+
+            &>input {
+              @include blueinput-style;
+
+            }
+          }
+
+        }
+
+        &-pay {
+          display: grid;
+          grid-template-columns: subgrid;
+
+          &-qtd {
+            display: flex;
+            grid-column: 1/span 1;
+            flex-direction: column;
+            padding-inline: 34px;
+
+            &>label {
+              @include normaltext-style;
+
+            }
+
+            &-selection {
+              width: 90px;
+              height: 40px;
+
+              // border: none;
+              // outline: none;
+              color: #fff;
+              text-align: center;
+
+              background-color: transparent;
+
+              &>option {
+                cursor: pointer;
+                color: #fff;
+                background-color: #191536;
+              }
+            }
+          }
+
+          &-price {
+            grid-column: 2/span 1;
+
+            &-h2title {
+              @include h2-style;
+            }
+          }
+
+          &-cardnumber {
+            grid-column: 1/ span 2;
+
+            &-container {
+              display: flex;
+              flex-direction: row;
+              gap: 20px;
+              padding-inline: 10px;
+
+              &-cardpart {
+                width: 20%;
+                height: 32px;
+                text-align: center;
+
+                @include blueinput-style;
+              }
+            }
+
+
+          }
+
+          &-cardholder {
+            grid-column: 1/span 2;
+
+            &>input {
+              @include blueinput-style;
+            }
+
+
+          }
+
+          &-cardback {
+            display: grid;
+            grid-column: 1/span 2;
+            padding-bottom: 40px;
+
+            &>div>input {
+              @include blueinput-style;
+
+            }
+
+            &>div:nth-of-type(2) {
+              grid-column: 2;
+              grid-row: 1;
+            }
+          }
+
+          &-button {
+            grid-column: 1/span 2;
+            width: 100%;
+
+            @include buttons-style;
+          }
+        }
+
+
+
+
+
+      }
+    }
+  }
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+// Lógica de movimentação do Slider
+[id="step1"]:checked~.buynow-window .buynow-window-slider {
+  transform: translateX(0);
+}
+
+[id="step2"]:checked~.buynow-window .buynow-window-slider {
+  transform: translateX(-33.33%);
+}
+
+[id="step3"]:checked~.buynow-window .buynow-window-slider {
+  transform: translateX(-66.67%);
+}
+
+// Estilo do Menu Ativo (Usando suas classes)
+[id="step1"]:checked ~ .buynow-nav label[for="step1"],
+[id="step2"]:checked ~ .buynow-nav label[for="step2"],
+[id="step3"]:checked ~ .buynow-nav label[for="step3"] {
+  border-bottom: 2px solid #00d1ff;
+  color: #00d1ff; // Sua variável $azul
 }

@@ -6,12 +6,25 @@
   &-info {
     grid-column: 1/-1;
 
+    @include device {
+      grid-column: span 3;
+      order: 0;
+    }
+
+    @include device('desktop'){
+      grid-column: span 6;
+    }
+
+    @include device('large'){
+      grid-column:span 8;
+    }
+
     &-subtitle {
       @include subtitle-style;
     }
 
     &-h3title {
-      @include h3-style;
+      @include h2-style;
     }
   }
 
@@ -21,11 +34,27 @@
     flex-direction: column;
     gap: 24px;
 
+    @include device {
+      grid-column: span 3;
+      grid-row: span 3;
+      order: 5;
+    }
+
+    @include device('desktop'){
+      grid-column: span 6;
+    }
+
+    @include device('large'){
+      grid-column:span 8;
+    }
+
+
     &-input {
       @include input-style;
 
       padding-bottom: 20px;
       border: none;
+      border-bottom: 1px solid #2F2F2F;
       background-color: transparent;
     }
 
@@ -34,16 +63,70 @@
 
       min-height: 90px;
       border: none;
+      border-bottom: 1px solid #2F2F2F;
       background-color: transparent;
 
     }
 
     &-button {
       @include buttons-style;
+
+      width: 100%;
+
+      @include device {
+        width: 70%;
+      }
     }
 
     &-subtitle {
-      @include input-style;
+      @include subtitle-gray-style;
+
+      grid-column: 1/-1;
+
+      @include device {
+        grid-column: span 3;
+        grid-row: 2;
+        order: 1;
+      }
     }
+  }
+
+  &-contact {
+    grid-column: 2;
+    grid-row: 2;
+
+    @include device {
+      grid-column: span 3;
+      grid-row: 3;
+    }
+
+    &-ul {
+
+      @include footer-ul;
+
+
+      &-li {
+        &>a {
+          @include footercontact-style;
+
+        }
+      }
+    }
+  }
+
+}
+
+.form-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &-home {
+    width: 40px;
+    height: 40px;
+
+    background-image: url(/src/images/icons/home-icon.png);
+    background-position: center;
+    background-size: contain;
   }
 }
